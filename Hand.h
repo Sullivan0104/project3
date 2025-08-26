@@ -14,6 +14,8 @@ public:
   Hand();
   Hand(Deck deck, int N);
   std::string printHand();
+  Card dealCard(int num);
+  int getHandSize();
 };
 
 #endif // HAND_H_

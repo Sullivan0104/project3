@@ -7,12 +7,12 @@
 
 class Player
 {
-private:
-  Hand hand;
-  int score;
 public:
-  Player();
-  Player(Deck deck, int N);
+  Hand hand;
+  int score{0};
+
+  Player() {}
+  Player(Deck deck, int N): hand(deck, N) {}
 };
 
 

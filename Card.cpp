@@ -1,13 +1,36 @@
 #include "Card.h"
-#include <iostream>
 
 Card::Card(){}
-Card::Card(int rank, Color color): rank{0}, color{purple}
+Card::Card(int rank, Color color): rank{rank}, color{color}
+{
+  if (color == purple)
+  {
+    value = rank;
+  }
+  else
+  {
+    value = 2 * rank;
+  }
+}
 
 std::string Card::printCard()
 {
-  std::cout << color << rank << std::endl;
+  std::stringstream ss;
+  switch(color)
+  {
+    case purple:
+      ss << "purple:" << rank;
+    break;
+    case orange:
+      ss << "orange:" << rank;
+    break;
+  }
+  return ss.str();
 }
-int Card::getRank(){return rank;}
-Color Card::getColor(){return color;}
-int Card::getValue(){return value;}
+
+int Card::getRank()
+{return rank;}
+int Card::getValue()
+{return value;}
+Card::Color Card::getColor()
+{return color;}

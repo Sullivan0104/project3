@@ -1,17 +1,16 @@
 #ifndef CARD_H_
 #define CARD_H_
-
-#include <string>
+#include <sstream>
+#include <ostream>
 
 class Card
 {
 private:
+  public: enum Color {purple, orange}; // am i doing this right?
   int rank, value;
-  public:enum Color {purple, orange}; // am i doing this right?
   Color color;
 
 public:
-
   Card();
   Card(int rank, Color color);
 
@@ -20,6 +19,5 @@ public:
   Color getColor();
   int getValue();
 };
-
 
 #endif // CARD_H_
